@@ -1,0 +1,12 @@
+PASS: Next moves forward
+PASS: Next wraps from the last stop to the first
+PASS: Previous wraps from the first stop to the last
+PASS: Empty list does not crash
+PASS: A complete record is usable
+PASS: Missing longitude is flagged, not guessed
+PASS: Longitude 200 is out of range
+PASS: Swapped longitude/latitude is caught
+PASS: Missing source is flagged
+PASS: Photo without alt text is flagged
+PASS: usable() drops bad records only
+FAIL: Every record in places.js is usable

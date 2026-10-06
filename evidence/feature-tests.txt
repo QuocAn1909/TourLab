@@ -1,0 +1,4 @@
+PASS: Reset from stop 3 updates count, destination and marker selection (test doubles).
+PASS: Reset at stop 1 stays at stop 1.
+PASS: Previous and Next still wrap.
+PASS: Reset works without Cesium.

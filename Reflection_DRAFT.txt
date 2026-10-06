@@ -1,0 +1,9 @@
+DRAFT — review, personalize, and update after your own testing. Do not claim steps you did not perform.
+
+For this project, I provided the supplied Tour Lab starter and asked ChatGPT to help adapt it for students in my Computer Science major. The result is a concept tour with IT support, programming study, and cybersecurity practice stops. Each stop is clearly labeled as a placeholder because the project does not verify actual campus locations.
+
+ChatGPT added a Reset Tour button. It sets the selected index to zero and calls the existing show function, which updates the stop information and camera target. The original Next button was not counted as a new feature because it already existed in the starter.
+
+During the assistant's missing-data exercise, removing the first stop's longitude caused a validation warning and one failed automated test. Restoring the numeric value returned the suite to twelve passing tests. The assistant also checked the Reset handler using test doubles. These results do not replace a real browser demonstration.
+
+My contribution so far was supplying the assignment and starter; the implementation and this draft were AI-assisted. My own browser checks and partner feedback are still pending. One limitation is that this tour cannot guide someone to real campus resources. The assistant checked Cesium's official documentation for the camera API, but real locations need separate verification before publication.

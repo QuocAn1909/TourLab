@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>CS Resource Tour</title>
+<link rel="stylesheet" href="https://cesium.com/downloads/cesiumjs/releases/1.145/Build/Cesium/Widgets/widgets.css"><link rel="stylesheet" href="style.css"></head><body>
+<header><p>ALVERNIA · AI 101 · WEEK 6</p><h1>CS Resource Tour</h1><p>A concept tour for new Computer Science students • All three stops are simulated placeholders.</p></header>
+<main>
+<section aria-label="Tour stop details">
+  <p id="message" role="status">Loading…</p>
+  <p id="count" class="count" aria-live="polite"></p>
+  <h2 id="name"></h2>
+  <img id="photo" hidden alt="">
+  <p id="nophoto" class="muted" hidden>No photo for this stop yet.</p>
+  <p id="desc"></p>
+  <p id="source" class="muted"></p>
+  <div class="buttons"><button id="prev">◀ Previous</button><button id="next">Next stop ▶</button><button id="reset">Reset Tour</button></div>
+  <div id="problems" class="problems" role="alert"></div>
+  <p><a href="tests.html">Run tour tests</a></p>
+</section>
+<div id="globe" aria-label="Interactive 3D globe showing tour stop markers"></div>
+</main>
+<footer>Grid globe, no satellite imagery or terrain. Stop positions come from places.js. Verify every fact before publishing.</footer>
+<script src="https://cesium.com/downloads/cesiumjs/releases/1.145/Build/Cesium/Cesium.js"></script>
+<script src="places.js"></script><script src="tour-core.js"></script><script src="app.js"></script></body></html>

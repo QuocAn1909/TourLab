@@ -1,0 +1,3 @@
+Observed app.js warning in Node DOM test double (not a browser screenshot):
+<strong>Needs verification (not shown on the map):</strong><ul><li>IT Help Desk — PLACEHOLDER: longitude must be a number from -180 to 180</li></ul>
+Stop 1 of 2

@@ -1,0 +1,30 @@
+ID,Date,Executor_or_method,Action,Expected,Actual,Status,Evidence
+B01,2026-10-05,AI Node,Original node tests.js,12 PASS,12 PASS,PASS,evidence/baseline-tests.txt
+B02,2026-10-05,Student browser,Run unchanged original starter,Globe renders and controls work,Not run,PENDING,Attach screenshot; original ZIP in evidence/
+A01,2026-10-05,AI Node,Next moves forward,PASS,PASS: Next moves forward,PASS,evidence/final-tests.txt
+A02,2026-10-05,AI Node,Next wraps from the last stop to the first,PASS,PASS: Next wraps from the last stop to the first,PASS,evidence/final-tests.txt
+A03,2026-10-05,AI Node,Previous wraps from the first stop to the last,PASS,PASS: Previous wraps from the first stop to the last,PASS,evidence/final-tests.txt
+A04,2026-10-05,AI Node,Empty list does not crash,PASS,PASS: Empty list does not crash,PASS,evidence/final-tests.txt
+A05,2026-10-05,AI Node,A complete record is usable,PASS,PASS: A complete record is usable,PASS,evidence/final-tests.txt
+A06,2026-10-05,AI Node,"Missing longitude is flagged, not guessed",PASS,"PASS: Missing longitude is flagged, not guessed",PASS,evidence/final-tests.txt
+A07,2026-10-05,AI Node,Longitude 200 is out of range,PASS,PASS: Longitude 200 is out of range,PASS,evidence/final-tests.txt
+A08,2026-10-05,AI Node,Swapped longitude/latitude is caught,PASS,PASS: Swapped longitude/latitude is caught,PASS,evidence/final-tests.txt
+A09,2026-10-05,AI Node,Missing source is flagged,PASS,PASS: Missing source is flagged,PASS,evidence/final-tests.txt
+A10,2026-10-05,AI Node,Photo without alt text is flagged,PASS,PASS: Photo without alt text is flagged,PASS,evidence/final-tests.txt
+A11,2026-10-05,AI Node,usable() drops bad records only,PASS,PASS: usable() drops bad records only,PASS,evidence/final-tests.txt
+A12,2026-10-05,AI Node,Every record in places.js is usable,PASS,PASS: Every record in places.js is usable,PASS,evidence/final-tests.txt
+F01,2026-10-05,AI integration test doubles,"Reset from stop 3 updates count, destination and marker selection (test doubles).",PASS,"PASS: Reset from stop 3 updates count, destination and marker selection (test doubles).",PASS,evidence/feature-tests.txt; no real rendering
+F02,2026-10-05,AI integration test doubles,Reset at stop 1 stays at stop 1.,PASS,PASS: Reset at stop 1 stays at stop 1.,PASS,evidence/feature-tests.txt; no real rendering
+F03,2026-10-05,AI integration test doubles,Previous and Next still wrap.,PASS,PASS: Previous and Next still wrap.,PASS,evidence/feature-tests.txt; no real rendering
+F04,2026-10-05,AI integration test doubles,Reset works without Cesium.,PASS,PASS: Reset works without Cesium.,PASS,evidence/feature-tests.txt; no real rendering
+D01,2026-10-05,AI Node,Set first longitude null on separate copy,11 PASS and 1 FAIL,11 PASS and Every record in places.js is usable FAIL,PASS (expected failure),evidence/broken-tests.txt
+D02,2026-10-05,AI DOM test double,Execute broken app.js,Longitude warning and 2 usable stops,Longitude warning; Stop 1 of 2,PASS,evidence/broken-warning.txt
+D03,2026-10-05,AI Node,Restore numeric longitude,12 PASS,12 PASS,PASS,evidence/repaired-tests.txt
+M01,2026-10-05,Provisional student manual,Initial globe/markers,See MANUAL_CHECKS.md; align with instructor page,Not performed,PENDING,Add screenshot and observation
+M02,2026-10-05,Provisional student manual,Next and wrap,See MANUAL_CHECKS.md; align with instructor page,Not performed,PENDING,Add screenshot and observation
+M03,2026-10-05,Provisional student manual,Previous and wrap,See MANUAL_CHECKS.md; align with instructor page,Not performed,PENDING,Add screenshot and observation
+M04,2026-10-05,Provisional student manual,Reset including keyboard,See MANUAL_CHECKS.md; align with instructor page,Not performed,PENDING,Add screenshot and observation
+M05,2026-10-05,Provisional student manual,Browser break-and-repair,See MANUAL_CHECKS.md; align with instructor page,Not performed,PENDING,Add screenshot and observation
+M06,2026-10-05,Provisional student manual,Labels/photos/layout,See MANUAL_CHECKS.md; align with instructor page,Not performed,PENDING,Add screenshot and observation
+H01,2026-10-05,Student browser,Open tests.html,12 PASS,Not run in a browser,PENDING,Attach screenshot
+P01,2026-10-05,Partner,Follow README and implement feedback,Reproducible run and one feedback-based improvement,No partner observation yet,PENDING,Partner_Feedback.md
