@@ -50,13 +50,15 @@
         fullscreenButton: false, infoBox: false, selectionIndicator: false,
         terrainProvider: new Cesium.EllipsoidTerrainProvider()
       });
-      viewer.imageryLayers.addImageryProvider(new Cesium.GridImageryProvider());
+      const gridLayer = viewer.imageryLayers.addImageryProvider(new Cesium.GridImageryProvider());
+      // Load imagery separately so token/network errors never disable tour controls.
+      loadIonImagery(viewer, gridLayer);
       markers = stops.map((p, n) => viewer.entities.add({
         position: Cesium.Cartesian3.fromDegrees(p.lon, p.lat, 0),   // longitude FIRST
         point: { pixelSize: 14, color: Cesium.Color.WHITE, outlineColor: Cesium.Color.BLACK, outlineWidth: 2 },
         label: { text: `${n + 1}. ${p.name}`, font: '14px sans-serif', pixelOffset: new Cesium.Cartesian2(0, -24), showBackground: true }
       }));
-      $('message').textContent = 'Virtual tour: the camera flight between stops is not a walking route.';
+
     } catch (e) {
       viewer = null;
       $('message').textContent = 'The globe could not start (WebGL?). The stop list still works.';
@@ -64,4 +66,31 @@
     }
   }
   show();
+
+  async function loadIonImagery(map, gridLayer) {
+    const config = typeof CONFIG !== 'undefined' ? CONFIG : {};
+    const token = typeof config.cesiumIonAccessToken === 'string' ? config.cesiumIonAccessToken.trim() : '';
+    if (!token) {
+      $('message').textContent = 'Grid preview: add your Cesium ion token in config.js, save, then refresh to load real map imagery.';
+      return;
+    }
+    $('message').textContent = 'Loading Cesium ion imagery...';
+    try {
+      Cesium.Ion.defaultAccessToken = token;
+      const asset = config.imageryAssetId;
+      if (asset != null && (!Number.isInteger(asset) || asset <= 0)) throw new Error('Invalid imagery asset ID');
+      const provider = asset == null
+        ? await Cesium.createWorldImageryAsync({ style: Cesium.IonWorldImageryStyle.AERIAL_WITH_LABELS })
+        : await Cesium.IonImageryProvider.fromAssetId(asset);
+      provider.errorEvent.addEventListener(() => {
+        $('message').textContent = 'Some imagery tiles could not load. Check internet, token asset permissions and allowed URLs. Tour controls still work.';
+      });
+      map.imageryLayers.addImageryProvider(provider);
+      map.imageryLayers.remove(gridLayer, true);
+      $('message').textContent = 'Imagery provider ready. Virtual tour only: flights are not walking routes; stop markers are placeholders.';
+    } catch (_) {
+      // Do not log token-bearing URLs or service errors.
+      $('message').textContent = 'Map imagery could not load. Check config.js token, asset permissions and allowed URLs. Grid preview and tour controls still work.';
+    }
+  }
 })();

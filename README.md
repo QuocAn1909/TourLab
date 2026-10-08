@@ -1,3 +1,21 @@
+# Imagery update — 2026-10-07
+
+This uploaded project now includes config.js. Paste a public read-only Cesium ion token into cesiumIonAccessToken and reload. index.html loads config.js before app.js. A blank token leaves a labeled grid preview. Token/network/asset failures display a message while navigation continues.
+
+Default: createWorldImageryAsync with AERIAL_WITH_LABELS. An optional numeric imageryAssetId uses IonImageryProvider.fromAssetId. The globe retains ellipsoid geometry; this adds imagery, not terrain or 3D buildings. Existing stop coordinates remain explicitly simulated. CesiumJS stays pinned to 1.145.
+
+For GitHub Pages, update config.js, app.js and index.html together. Restrict the browser token to read-only imagery access; configure allowed URLs for localhost and the deployed site if restrictions are enabled. See SETUP_MAP_VI.txt.
+
+Validation: original rule tests and Reset integration checks run locally. New configuration/error-path tests use Cesium test doubles. Live ion imagery and WebGL must be verified after a real token is entered; existing screenshots document the earlier grid version.
+
+Official API references checked for this update:
+https://cesium.com/learn/cesiumjs/ref-doc/global.html#createWorldImageryAsync
+https://cesium.com/learn/cesiumjs/ref-doc/IonImageryProvider.html#fromAssetId
+
+The original lab notes below describe the earlier grid baseline; their no-token/no-imagery statements apply to that baseline only.
+
+---
+
 # CS Resource Tour — AI 101, Path B
 
 ## Purpose and audience

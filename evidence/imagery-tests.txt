@@ -1,0 +1,6 @@
+PASS: Blank token keeps grid and explains setup.
+PASS: Default imagery replaces grid; Reset still works.
+PASS: Tile failure reports clear error.
+PASS: Configured imagery asset used.
+PASS: Provider rejection keeps grid and buttons.
+PASS: Invalid asset ID handled.

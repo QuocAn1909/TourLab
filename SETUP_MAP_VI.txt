@@ -1,0 +1,18 @@
+BAT BAN DO THAT
+
+1. Mo config.js bang Notepad.
+2. Tim dong: cesiumIonAccessToken: "",
+3. Dan token Cesium ion vao giua hai dau ngoac kep, vi du:
+   cesiumIonAccessToken: "DAN_TOKEN_CUA_BAN_VAO_DAY",
+4. Ctrl+S. Mo lai trang qua server va Ctrl+F5.
+
+Token: https://ion.cesium.com/tokens
+Dung token chi doc cho website. Neu token co Allowed URLs, cho phep dia chi localhost va dia chi GitHub Pages ban dang dung. Token trong config.js se hien voi nguoi xem website, nen khong dung quyen ghi/quan tri.
+
+Neu ban dang dung GitHub Pages: cap nhat ca config.js, app.js va index.html len dung thu muc cua website. Chi sua tren may khong cap nhat website online.
+
+imageryAssetId: null dung anh ban do mac dinh. Chi thay bang so asset IMAGERY neu thay cung cap.
+
+Ban do that khong tu bien ba diem PLACEHOLDER thanh dia diem truong da xac minh. Ban nay them anh nen, khong them toa nha 3D.
+
+Chua the xac nhan anh nen tai thanh cong truoc khi ban them token va thu tren trinh duyet. Sau khi thay ban do, thu Next/Previous/Reset va tests.html, luu anh moi vao evidence.
